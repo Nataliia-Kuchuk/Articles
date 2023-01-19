@@ -34,7 +34,7 @@
         "jsx-a11y/mouse-events-have-key-events": "off", // This otion is enforce onmouseover/onmouseout are accompanied by onfocus/onblur.
         "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }], // The set of allowed extensions is configurable. In this rule '.jsx' and '.js' is allowed.
         "no-unused-vars": "warn", // This rule is disallow unused variables.
-        "no-confusing-arrow": "off", // This rule is disallow arrow functions where they could be confused with comparisons.
+        "no-confusing-arrow": "off", // This rfule is disallow arrow functions where they could be confused with comparisons.
         "arrow-parens": "off", // This option is require parentheses around arrow function arguments.
         "import/no-extraneous-dependencies": "off", // Forbid the import of external modules that are not declared in the package.json's dependencies, devDependencies, optionalDependencies, peerDependencies, or bundledDependencies.
         "import/extensions": "off", // Some file resolve algorithms allow you to omit the file extension within the import source path.

@@ -1,11 +1,16 @@
-import React from 'react';
+import React, { useEffect } from 'react'
+import { useSelector, useDispatch } from 'react-redux'
+import { getArticles } from '../../Redux/Actions'
+import { actyionDispatch } from '../../Redux/ActionsDispatch'
 
 const ArticleList = () => {
-    return (
-        <div>
-            list
-        </div>
-    );
-};
+    const selector = useSelector((state) => state)
+    const {dispatch} = actyionDispatch()
 
-export default ArticleList;
+    useEffect(() => {
+        dispatch(getArticles())
+    }, [])
+    return <div>list</div>
+}
+
+export default ArticleList
