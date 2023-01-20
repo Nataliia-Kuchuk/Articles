@@ -1,0 +1,21 @@
+.article-button {
+    font-weight: 700;
+    border: none;
+    background-color: inherit;
+    text-transform: capitalize;
+    color: #363636;
+    margin: 25px 0px;
+}
+.subtitle {
+    max-width: 400px;
+    height: 100px;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.title{
+    height: 100px;
+}
+.date{
+    margin: 25px 0px 10px 10x!important;
+}

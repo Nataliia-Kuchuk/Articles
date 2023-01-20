@@ -19,14 +19,4 @@ export const getArticles = (params: ArticleQueryParams) => {
     }
 }
 
-export const getSearchArticles = (value: string) => {
-    return async (dispatch: Dispatch<Action>) => {
-        try {
-            dispatch({ type: ActionType.GET_ARTICLES_PENDING })
-             const response = await spaceSwapi.getSearchArticles(value)
-            dispatch({ type: ActionType.GET_ARTICLES_SUCCESS, payload: response })
-        } catch (err: any) {
-            dispatch({ type: ActionType.GET_ARTICLES_FAIL, payload: err.message })
-        }
-    }
-}
+

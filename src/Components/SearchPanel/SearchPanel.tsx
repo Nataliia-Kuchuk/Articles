@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext, useTransition } from 'react';
+import React, { useState, useContext} from 'react';
 import TextField from '@mui/material/TextField';
 import InputAdornment from '@mui/material/InputAdornment';
 import InputLabel from '@mui/material/InputLabel';
@@ -6,7 +6,7 @@ import SearchResult from '../SearchResult/SearchResult';
 import SpaceFlightApi from '../../Services/SpaceFlightApi';
 import { actyionDispatch } from '../../Redux/ActionsDispatch';
 import { SearchContext } from '../../context/articleContext';
-import {} from 'react';
+import './SearchPanel.scss';
 import useDebounce from '../../Hooks/useDebounce';
 
 const SearchPanel = () => {
@@ -24,7 +24,7 @@ const SearchPanel = () => {
 
     return (
         <div className='search-panel'>
-            <InputLabel htmlFor='search'>Filter by keywords</InputLabel>
+            <InputLabel className='search-label' htmlFor='search'>Filter by keywords</InputLabel>
             <TextField
                 value={value}
                 onChange={handleChange}

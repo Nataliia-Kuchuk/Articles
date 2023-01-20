@@ -54,7 +54,7 @@
             }
         ], // This option enforces a specific function type for function components.
         "import/prefer-default-export": "off",
-        "no-empty":"fasle",
+        "no-empty": 0,
         "no-underscore-dangle": ["error", { "allow": ["_id"] }],
         "camelcase": ["error", { "allow": ["admin_name", "title_contains", "summary_contains"] }]
     },
