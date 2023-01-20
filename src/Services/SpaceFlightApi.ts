@@ -16,9 +16,9 @@ export default class SpaceFlightApi {
             console.log(error)
         }
     }
-    getSearchArticles = async (value: string) => {
+    getArticle = async (id: string) => {
         try {
-            const articles = await this.getData(`articles?title_contains=${value}`)
+            const articles = await this.getData(`articles/${id}`)
             return articles
         } catch (error) {
             console.log(error)

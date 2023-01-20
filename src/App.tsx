@@ -1,14 +1,10 @@
 import React from 'react';
-import Container from '@mui/material/Container'
+
 import './App.scss';
-import MainRoutes from './Routes/MainRoutes'
+import MainRoutes from './Routes/MainRoutes';
 
 const App = () => {
-    return (
-        <Container className='container'>
-            <MainRoutes />
-        </Container>
-    )
-}
+    return <MainRoutes />;
+};
 
-export default App
+export default App;

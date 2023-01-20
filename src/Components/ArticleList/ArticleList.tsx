@@ -20,6 +20,7 @@ import { SearchContext } from '../../context/articleContext';
 import Skeleton from '@mui/material/Skeleton';
 import { articleReducer } from '../../Redux/Reducer';
 import { useParams } from 'react-router-dom';
+import { CircularStatic } from '../Loader';
 const ArticleList = () => {
     const itemsEls = useRef<HTMLDivElement>(null);
     const [next, setNext] = useState<boolean>(true);
@@ -39,8 +40,9 @@ const ArticleList = () => {
             }),
         );
     }, [count, value]);
+   
 
-    if (!articles.length) {
+    if (!articles.length && !loading) {
         return <h1>NO ITEMS</h1>;
     }
 
