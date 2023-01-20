@@ -1,4 +1,5 @@
-import { async } from 'q'
+import qs from 'query-string';
+import { ArticleQueryParams } from '../Types/Article';
 
 export default class SpaceFlightApi {
     urlBase = 'https://api.spaceflightnewsapi.net/v3'
@@ -7,9 +8,17 @@ export default class SpaceFlightApi {
         const response = await data.json()
         return response
     }
-    getArticles = async () => {
+    getArticles = async (params: ArticleQueryParams) => {
         try {
-            const articles = await this.getData('articles/')
+            const articles = await this.getData(`articles?${qs.stringify(params)}`)
+            return articles
+        } catch (error) {
+            console.log(error)
+        }
+    }
+    getSearchArticles = async (value: string) => {
+        try {
+            const articles = await this.getData(`articles?title_contains=${value}`)
             return articles
         } catch (error) {
             console.log(error)

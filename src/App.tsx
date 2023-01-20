@@ -1,11 +1,14 @@
 import React from 'react';
+import Container from '@mui/material/Container'
 import './App.scss';
 import MainRoutes from './Routes/MainRoutes'
 
 const App = () => {
-    return <div>
-        <MainRoutes/>
-    </div>
+    return (
+        <Container className='container'>
+            <MainRoutes />
+        </Container>
+    )
 }
 
 export default App

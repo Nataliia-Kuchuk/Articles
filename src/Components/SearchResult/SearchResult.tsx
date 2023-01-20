@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { FC } from 'react';
+import './SearchResult.scss';
 
-const SearchResult = () => {
-    return (
-        <div>
-            result
-        </div>
-    );
+interface SearchResultProps {
+    count: number;
+}
+const SearchResult: FC<SearchResultProps> = ({ count }) => {
+    return <div className='search-result'>Results: {count}</div>;
 };
 
 export default SearchResult;

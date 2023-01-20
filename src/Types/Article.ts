@@ -5,3 +5,10 @@ export interface IArticle {
     summary: string
     updatedAt: string
 }
+
+export type ArticleQueryParams = {
+ 
+    _limit: number;
+    title_contains: string;
+    summary_contains: string;
+};
