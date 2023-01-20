@@ -4,12 +4,15 @@ import { BrowserRouter } from 'react-router-dom'
 import { Provider } from 'react-redux'
 import { store } from './Store/Store'
 import './index.scss'
+import { SearchProvider } from './context/articleContext'
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 root.render(
     <Provider store={store}>
-        <BrowserRouter>
-            <App />
-        </BrowserRouter>
+        <SearchProvider>
+            <BrowserRouter>
+                <App />
+            </BrowserRouter>
+        </SearchProvider>
     </Provider>,
 )
