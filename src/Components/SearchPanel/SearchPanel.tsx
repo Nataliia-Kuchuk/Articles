@@ -27,7 +27,11 @@ const SearchPanel = () => {
                 value={value}
                 onChange={handleChange}
                 id='search'
-                sx={{ width: '600px', height: '50px' }}
+                sx={{
+                    width: {
+                        xs: '70%', sm: '65%', md: '50%'
+                    }, height: '50px'
+                }}
                 InputProps={{
                     startAdornment: (
                         <InputAdornment position='start'>

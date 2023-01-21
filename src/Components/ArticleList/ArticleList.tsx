@@ -47,8 +47,8 @@ const ArticleList = () => {
     }
 
     return (
-        <Box sx={{ flexGrow: 1 }} className='article-list'>
-            <Grid container spacing={6} columns={{ xs: 4, sm: 8, md: 12 }}>
+        <Box sx={{ flexGrow: 1 }} >
+            <Grid container spacing={{xs: 1, sm: 2, md: 4}} columns={{ xs: 4, sm: 8, md: 12 }} direction={{xs: 'column', sm: 'row'}} className='article-list' >
                 {articles.map((item) => (
                     <Grid item xs={2} sm={4} md={4} key={item.id}>
                         <ArticleItem {...item} />

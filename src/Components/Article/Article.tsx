@@ -12,7 +12,6 @@ interface ArticleProps {
 const Article: FC<ArticleProps> = ({ id }) => {
     const { article, loading, error } = useFetchArticleById(id);
     const navigate = useNavigate();
-    console.log(article);
     if (loading) return <CircularStatic />;
     return (
         <div>
@@ -34,7 +33,7 @@ const Article: FC<ArticleProps> = ({ id }) => {
             >
                 <Paper elevation={3} sx={{ width: '90%' }} className='article-info'>
                     <h1 className='article-title'>{article?.title}</h1>
-                    <p>
+                    <p className='summary'>
                         {article?.summary}
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Interdum ornare
                         convallis non etiam tincidunt tincidunt. Non dolor vel purus id. Blandit

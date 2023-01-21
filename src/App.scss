@@ -1,4 +1,7 @@
 .container{
-    max-width: 1440px;
+    max-width: 90%;
     padding: 60px 75px;
+      @media (max-width: 600px) {
+    flex-direction: column;
+  }
 }

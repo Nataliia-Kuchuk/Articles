@@ -11,4 +11,4 @@ const ArticlePage = () => {
     );
 };
 
-export default ArticlePage;
+export default ArticlePage

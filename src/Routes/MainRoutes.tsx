@@ -1,6 +1,6 @@
 import React, { Suspense, lazy } from 'react';
 import { Route, Routes } from 'react-router-dom';
-import {CircularStatic} from '../Components/Loader';
+import { CircularStatic } from '../Components/Loader';
 
 const HomePage = lazy(() => import('../Pages/HomePage/HomePage'));
 const ArticlePage = lazy(() => import('../Pages/ArticlePage/ArticlePage'));

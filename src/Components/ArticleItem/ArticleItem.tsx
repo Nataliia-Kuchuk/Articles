@@ -1,14 +1,14 @@
 import React, { FC, useContext } from 'react';
 import Highlighter from 'react-highlight-words';
 import { SearchContext } from '../../context/articleContext';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import CalendarTodayIcon from '@mui/icons-material/CalendarToday';
 import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
-import { CardActionArea, Button } from '@mui/material';
+import { CardActionArea } from '@mui/material';
 import './ArticleItem.scss';
 interface ArticleItemProps {
     imageUrl: string;
@@ -22,7 +22,7 @@ const ArticleItem: FC<ArticleItemProps> = ({ imageUrl, title, summary, updatedAt
     const today = new Date(updatedAt);
     const navigate = useNavigate();
     return (
-        <Card sx={{ maxWidth: 400, maxHeight: 600, height: 530 }}>
+        <Card sx={{ maxWidth: 400, maxHeight: 600, height: 530 }} className='card'>
             <CardActionArea>
                 <CardMedia component='img' height='217' image={imageUrl} alt='article-image' />
                 <CardContent>
@@ -65,12 +65,7 @@ const ArticleItem: FC<ArticleItemProps> = ({ imageUrl, title, summary, updatedAt
                             textToHighlight={summary}
                         />
                     </Typography>
-                    <Button
-                        className='article-button'
-                        size='small'
-                        color='primary'
-                        onClick={() => navigate(`/Articles/${id}`)}
-                    >
+                    <button className='article-button' onClick={() => navigate(`/Articles/${id}`)}>
                         Read more
                         <ArrowRightAltIcon
                             sx={{
@@ -78,11 +73,11 @@ const ArticleItem: FC<ArticleItemProps> = ({ imageUrl, title, summary, updatedAt
                                 fontWeight: 300,
                                 fontSize: 16,
                                 position: 'relative',
-                                top: 2,
-                                marginLeft: 0.5
+                                top: 3,
+                                marginLeft: 0.5,
                             }}
                         />
-                    </Button>
+                    </button>
                 </CardContent>
             </CardActionArea>
         </Card>
