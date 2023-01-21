@@ -20,6 +20,8 @@ import { SearchContext } from '../../context/articleContext';
 import Skeleton from '@mui/material/Skeleton';
 import { articleReducer } from '../../Redux/Reducer';
 import { useParams } from 'react-router-dom';
+import Stack from '@mui/material/Stack';
+import SnackbarContent from '@mui/material/SnackbarContent';
 import { CircularStatic } from '../Loader';
 const ArticleList = () => {
     const itemsEls = useRef<HTMLDivElement>(null);
@@ -41,10 +43,19 @@ const ArticleList = () => {
         );
     }, [count, value]);
    
-
+    const action = (
+    <Stack spacing={2} sx={{ maxWidth: 600 }}>
+      <SnackbarContent sx={{marginTop: 2, textTransform: 'uppercase'}}
+        message={
+          'No articles'
+        }
+      />
+    </Stack>
+)
     if (!articles.length && !loading) {
-        return <h1>NO ITEMS</h1>;
-    }
+         return action
+}
+   
 
     return (
         <Box sx={{ flexGrow: 1 }} className='article-list'>

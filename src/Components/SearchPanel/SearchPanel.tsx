@@ -3,11 +3,10 @@ import TextField from '@mui/material/TextField';
 import InputAdornment from '@mui/material/InputAdornment';
 import InputLabel from '@mui/material/InputLabel';
 import SearchResult from '../SearchResult/SearchResult';
-import SpaceFlightApi from '../../Services/SpaceFlightApi';
-import { actyionDispatch } from '../../Redux/ActionsDispatch';
+import SearchIcon from '@mui/icons-material/Search';
 import { SearchContext } from '../../context/articleContext';
 import './SearchPanel.scss';
-import useDebounce from '../../Hooks/useDebounce';
+
 
 const SearchPanel = () => {
     const [query, setQuery] = useState<string>('');
@@ -31,7 +30,7 @@ const SearchPanel = () => {
                 id='search'
                 sx={{ width: '600px', height: '50px' }}
                 InputProps={{
-                    startAdornment: <InputAdornment position='start'>+</InputAdornment>,
+                    startAdornment: <InputAdornment position='start'><SearchIcon/></InputAdornment>,
                 }}
             />
             <SearchResult count={6} />
