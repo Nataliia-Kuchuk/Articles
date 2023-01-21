@@ -10,8 +10,8 @@ const MainRoutes = () => {
         <div>
             <Suspense fallback={<CircularStatic />}>
                 <Routes>
-                    <Route path='/' element={<HomePage />} />
-                    <Route path='/article/:id' element={<ArticlePage />} />
+                    <Route path='/Articles' element={<HomePage />} />
+                    <Route path='/Articles/:id' element={<ArticlePage />} />
                 </Routes>
             </Suspense>
         </div>

@@ -1,28 +1,19 @@
-import React, {
-    useEffect,
-    useState,
-    useRef,
-    useContext,
-    useLayoutEffect,
-    useCallback,
-    useMemo,
-} from 'react';
+import React, { useEffect, useState, useRef, useContext } from 'react';
 import { useSelector } from 'react-redux';
 import { getArticles } from '../../Redux/Actions';
 import { actyionDispatch } from '../../Redux/ActionsDispatch';
 import ArticleItem from '../ArticleItem/ArticleItem';
-import Box from '@mui/material/Box';
-import Grid from '@mui/material/Grid';
-import './ArticleList.scss';
 import { RootState } from '../../Store/Store';
 import { useObserver } from '../../Hooks/useObserver';
 import { SearchContext } from '../../context/articleContext';
 import Skeleton from '@mui/material/Skeleton';
-import { articleReducer } from '../../Redux/Reducer';
 import { useParams } from 'react-router-dom';
 import Stack from '@mui/material/Stack';
 import SnackbarContent from '@mui/material/SnackbarContent';
-import { CircularStatic } from '../Loader';
+import Box from '@mui/material/Box';
+import Grid from '@mui/material/Grid';
+import './ArticleList.scss';
+
 const ArticleList = () => {
     const itemsEls = useRef<HTMLDivElement>(null);
     const [next, setNext] = useState<boolean>(true);
@@ -42,20 +33,18 @@ const ArticleList = () => {
             }),
         );
     }, [count, value]);
-   
+
     const action = (
-    <Stack spacing={2} sx={{ maxWidth: 600 }}>
-      <SnackbarContent sx={{marginTop: 2, textTransform: 'uppercase'}}
-        message={
-          'No articles'
-        }
-      />
-    </Stack>
-)
+        <Stack spacing={2} sx={{ maxWidth: 600 }}>
+            <SnackbarContent
+                sx={{ marginTop: 2, textTransform: 'uppercase' }}
+                message={'No articles'}
+            />
+        </Stack>
+    );
     if (!articles.length && !loading) {
-         return action
-}
-   
+        return action;
+    }
 
     return (
         <Box sx={{ flexGrow: 1 }} className='article-list'>

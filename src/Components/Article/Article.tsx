@@ -1,11 +1,11 @@
 import React, { FC } from 'react';
 import { useFetchArticleById } from '../../Hooks/useFetchArticleById';
-import Paper from '@mui/material/Paper';
-import Box from '@mui/material/Box';
-import './Article.scss';
 import { useNavigate } from 'react-router';
 import { CircularStatic } from '../Loader';
 import KeyboardBackspaceIcon from '@mui/icons-material/KeyboardBackspace';
+import Paper from '@mui/material/Paper';
+import Box from '@mui/material/Box';
+import './Article.scss';
 interface ArticleProps {
     id: string;
 }
@@ -13,7 +13,7 @@ const Article: FC<ArticleProps> = ({ id }) => {
     const { article, loading, error } = useFetchArticleById(id);
     const navigate = useNavigate();
     console.log(article);
-     if (loading) return <CircularStatic />;
+    if (loading) return <CircularStatic />;
     return (
         <div>
             <img src={article?.imageUrl} alt='article' style={{ width: '100%', height: '245px' }} />
@@ -83,7 +83,7 @@ const Article: FC<ArticleProps> = ({ id }) => {
                     </p>
                 </Paper>
                 <div className='article-btn'>
-                    <button className='article-button' onClick={() => navigate('/')}>
+                    <button className='article-button' onClick={() => navigate('/Articles')}>
                         <KeyboardBackspaceIcon
                             sx={{
                                 color: 'grey',

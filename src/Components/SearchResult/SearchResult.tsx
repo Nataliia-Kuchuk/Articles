@@ -1,7 +1,8 @@
 import React, { FC } from 'react';
-import './SearchResult.scss';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../Store/Store';
+import './SearchResult.scss';
+
 interface SearchResultProps {
     count: number;
 }

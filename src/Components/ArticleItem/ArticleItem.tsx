@@ -1,14 +1,14 @@
-import React, { FC, useCallback, useContext, useState } from 'react';
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Typography from '@mui/material/Typography';
-import { CardActionArea, Button } from '@mui/material';
+import React, { FC, useContext } from 'react';
 import Highlighter from 'react-highlight-words';
 import { SearchContext } from '../../context/articleContext';
 import { Link, useNavigate } from 'react-router-dom';
 import CalendarTodayIcon from '@mui/icons-material/CalendarToday';
 import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
+import Typography from '@mui/material/Typography';
+import { CardActionArea, Button } from '@mui/material';
 import './ArticleItem.scss';
 interface ArticleItemProps {
     imageUrl: string;
@@ -69,7 +69,7 @@ const ArticleItem: FC<ArticleItemProps> = ({ imageUrl, title, summary, updatedAt
                         className='article-button'
                         size='small'
                         color='primary'
-                        onClick={() => navigate(`/article/${id}`)}
+                        onClick={() => navigate(`/Articles/${id}`)}
                     >
                         Read more
                         <ArrowRightAltIcon
