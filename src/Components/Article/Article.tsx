@@ -5,6 +5,7 @@ import Box from '@mui/material/Box';
 import './Article.scss';
 import { useNavigate } from 'react-router';
 import { CircularStatic } from '../Loader';
+import KeyboardBackspaceIcon from '@mui/icons-material/KeyboardBackspace';
 interface ArticleProps {
     id: string;
 }
@@ -82,7 +83,19 @@ const Article: FC<ArticleProps> = ({ id }) => {
                     </p>
                 </Paper>
                 <div className='article-btn'>
-                    <button className='article-button' onClick={() => navigate('/')}>Back to homepage</button>
+                    <button className='article-button' onClick={() => navigate('/')}>
+                        <KeyboardBackspaceIcon
+                            sx={{
+                                color: 'grey',
+                                fontWeight: 300,
+                                fontSize: 16,
+                                position: 'relative',
+                                top: 3,
+                                marginRight: 0.5,
+                            }}
+                        />
+                        Back to homepage
+                    </button>
                 </div>
             </Box>
         </div>

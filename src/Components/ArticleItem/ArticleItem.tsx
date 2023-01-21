@@ -7,6 +7,8 @@ import { CardActionArea, Button } from '@mui/material';
 import Highlighter from 'react-highlight-words';
 import { SearchContext } from '../../context/articleContext';
 import { Link, useNavigate } from 'react-router-dom';
+import CalendarTodayIcon from '@mui/icons-material/CalendarToday';
+import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
 import './ArticleItem.scss';
 interface ArticleItemProps {
     imageUrl: string;
@@ -18,25 +20,35 @@ interface ArticleItemProps {
 const ArticleItem: FC<ArticleItemProps> = ({ imageUrl, title, summary, updatedAt, id }) => {
     const { value } = useContext(SearchContext);
     const today = new Date(updatedAt);
-    console.log(today);
     const navigate = useNavigate();
-    let newSummary;
-    if (summary.length > 60) {
-        newSummary = summary.slice(0, 60) + '...';
-    }
     return (
         <Card sx={{ maxWidth: 400, maxHeight: 600, height: 530 }}>
             <CardActionArea>
-                <CardMedia component='img' height='217' image={imageUrl} alt='green iguana' />
-                <Typography variant='body2' color='text.secondary'>
-                    {' '}
-                    {today.toLocaleDateString('en-US', {
-                        month: 'long',
-                        day: 'numeric',
-                        year: 'numeric',
-                    })}
-                </Typography>
+                <CardMedia component='img' height='217' image={imageUrl} alt='article-image' />
                 <CardContent>
+                    <Typography
+                        variant='body2'
+                        color='text.secondary'
+                        sx={{
+                            marginBottom: 1,
+                        }}
+                    >
+                        <CalendarTodayIcon
+                            sx={{
+                                display: 'inline',
+                                position: 'relative',
+                                top: 2,
+                                mx: 0.5,
+                                fontSize: 14,
+                                marginLeft: 0,
+                            }}
+                        />
+                        {today.toLocaleDateString('en-US', {
+                            month: 'long',
+                            day: 'numeric',
+                            year: 'numeric',
+                        })}
+                    </Typography>
                     <Typography gutterBottom variant='h5' component='div' className='title'>
                         <Highlighter
                             highlightClassName='YourHighlightClass'
@@ -60,6 +72,16 @@ const ArticleItem: FC<ArticleItemProps> = ({ imageUrl, title, summary, updatedAt
                         onClick={() => navigate(`/article/${id}`)}
                     >
                         Read more
+                        <ArrowRightAltIcon
+                            sx={{
+                                color: 'grey',
+                                fontWeight: 300,
+                                fontSize: 16,
+                                position: 'relative',
+                                top: 2,
+                                marginLeft: 0.5
+                            }}
+                        />
                     </Button>
                 </CardContent>
             </CardActionArea>
